@@ -40,7 +40,7 @@ public class KafkaConsumer {
     public void consumeTwo(ConsumerRecord<?, ?> record, Acknowledgment ack, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
 
         Optional message = Optional.ofNullable(record.value());
-        if (message.isPresent()) {
+        if (Objects.nonNull(message)) {
             Object msg = message.get();
             logger.info("consumeTwo consume： Topic:" + topic + "\tMessage:" + msg);
             ack.acknowledge();

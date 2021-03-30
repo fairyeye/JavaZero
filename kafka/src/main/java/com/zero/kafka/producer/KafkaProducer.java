@@ -32,6 +32,8 @@ public class KafkaProducer {
 
         logger.info("=================================>kafka message is：" + message);
 
+//        kafkaTemplate.send("test", message);
+
         ListenableFuture<SendResult<String, Object>> future = kafkaTemplate.send("test", message);
         future.addCallback(success -> this.sendSuccessHandler("test", message),
                 fail -> sendFailHandler(message, "test"));
