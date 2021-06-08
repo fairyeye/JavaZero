@@ -1,5 +1,6 @@
 package com.zero.spring.guides.consumingrest;
 
+import com.zero.spring.guides.consumingrest.entity.Hitokoto;
 import com.zero.spring.guides.consumingrest.entity.Quote;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +29,7 @@ public class ConsumingRestApplication {
 	public CommandLineRunner runner(RestTemplate restTemplate) {
 		return args -> {
 			for(int i = 0; i < 10; i++) {
-				Quote quote = restTemplate.getForObject("https://quoters.apps.pcfone.io/api/random", Quote.class);
+				Hitokoto quote = restTemplate.getForObject("https://v1.hitokoto.cn", Hitokoto.class);
 				logger.info(quote.toString());
 			}
 		};
