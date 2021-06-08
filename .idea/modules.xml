@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaZero.iml" filepath="$PROJECT_DIR$/.idea/JavaZero.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-guides/consuming-rest/consuming-rest.iml" filepath="$PROJECT_DIR$/spring-guides/consuming-rest/consuming-rest.iml" />
       <module fileurl="file://$PROJECT_DIR$/kafka/kafka.iml" filepath="$PROJECT_DIR$/kafka/kafka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring-sample-guides/spring-sample-guides.iml" filepath="$PROJECT_DIR$/spring-sample-guides/spring-sample-guides.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oicq/oicq.iml" filepath="$PROJECT_DIR$/oicq/oicq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-guides/rest-service/rest-service.iml" filepath="$PROJECT_DIR$/spring-guides/rest-service/rest-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-guides/scheduling-tasks/scheduling-tasks.iml" filepath="$PROJECT_DIR$/spring-guides/scheduling-tasks/scheduling-tasks.iml" />
     </modules>
   </component>
 </project>

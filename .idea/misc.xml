@@ -5,6 +5,11 @@
       <list>
         <option value="$PROJECT_DIR$/kafka/pom.xml" />
         <option value="$PROJECT_DIR$/spring-sample-guides/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-guides/spring-sample-guides1/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-guides/rest-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-guides/consuming-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-guides/scheduling-tasks/pom.xml" />
+        <option value="$PROJECT_DIR$/oicq/pom.xml" />
       </list>
     </option>
   </component>
