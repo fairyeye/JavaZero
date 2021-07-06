@@ -27,7 +27,7 @@ public class GreetingController {
 	 * 还可以传递其他的http请求，（例：@PostMapping post请求）。还有一个@RequestMapping注解，@GetMapping、@PostMapping都是从这个注解派生出去的，并且可以使用@RequestMapping达到同样的效果（例：@RequestMapping(method=GET) = @GetMapping）
 	 *
 	 * @RequestParam binds the value of the query string parameter name into the name parameter of the greeting() method. If the name parameter is absent in the request, the defaultValue of World is used.
-	 * @RequestParam注解将查询参数中的name绑定到greeting()方法的name上中。如果参数name为空，就会使用默认值defaultValue的值，也就是`World`。
+	 * @RequestParam 注解将查询参数中的name绑定到greeting()方法的name上中。如果参数name为空，就会使用默认值defaultValue的值，也就是`World`。
 	 *
 	 * AtomicLong 是用来保证线程安全的，有兴趣可以了解下java.util.concurrent.*;
 	 */
