@@ -1,2 +1,0 @@
-# JavaZero
-Start from zero.

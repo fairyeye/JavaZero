@@ -2,9 +2,6 @@
 /.idea/libraries/
 
 # idea ignore
-.idea/
 *.ipr
 *.iml
 *.iws
-/.idea/
-/.idea/libraries/
