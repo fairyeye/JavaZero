@@ -1,0 +1,24 @@
+
+spring:
+  application:
+    name: KAFKA-DEMO
+  kafka:
+    bootstrap-servers: 192.168.100.56:9092
+    consumer:
+      auto-offset-reset: latest
+      # 默认的消费组ID
+      group-id: kafka
+      # Kafka提供的序列化和反序列化类 序列化String
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      # 由于设置原因 只能用MANUAL
+      ack-mode: MANUAL
+      poll-timeout: 3000
+    producer:
+      # Kafka提供的序列化和反序列化类 反序列化String
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+server:
+  port: 9001
