@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: java-zero-eureka
+server:
+  port: 8000
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
