@@ -1,5 +1,7 @@
 package com.li.javazeromofish.scheduler;
 
+import com.li.javazeromofish.service.MessageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -12,8 +14,12 @@ import java.util.Date;
 @Component
 public class MoFishTimer {
 
-    @Scheduled(fixedRate = 10000)
+    @Autowired
+    private MessageService messageService;
+
+    @Scheduled(cron = "0 30 15 * * ? ")
     public void sendMessageAm() {
+        messageService.sendMessage();
         System.out.println(new Date());
     }
 
