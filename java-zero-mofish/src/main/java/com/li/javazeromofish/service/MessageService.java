@@ -11,4 +11,6 @@ public interface MessageService {
 
     void sendMessage();
 
+    String getMessage();
+
 }

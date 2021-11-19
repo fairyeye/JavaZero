@@ -3,6 +3,9 @@ server:
 spring:
     application:
         name: moFish
+    error:
+        whitelabel:
+            enabled: false
 #eureka:
 #    client:
 #        service-url:

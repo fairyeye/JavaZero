@@ -1,17 +1,20 @@
 package com.li.javazeromofish.service.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.li.javazeromofish.service.MessageService;
+import okhttp3.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author huapeng.zhang@going-link.com
@@ -19,6 +22,8 @@ import java.util.stream.Stream;
  */
 @Component
 public class MessageServiceImpl implements MessageService {
+
+    private static final Logger logger = LoggerFactory.getLogger(MessageServiceImpl.class);
 
     private HashMap<LocalDate, String> holidayMap = new HashMap<LocalDate, String>();
     public static final String MESSAGE_1 = "距离%s还有%s天";
@@ -29,7 +34,40 @@ public class MessageServiceImpl implements MessageService {
         LocalDate localDate = LocalDate.now();
         initHolidayInfo(localDate);
         initMessage(localDate, message);
-        System.out.println(message);
+        logger.info(message.toString());
+
+        HashMap<String, String> content = new HashMap<>(2);
+        content.put("title", "摸鱼通知");
+        content.put("desp", message.toString());
+
+        String params = JSONObject.toJSONString(content);
+        System.out.println(params);
+    }
+
+    @Override
+    public String getMessage() {
+        StringBuilder message = new StringBuilder();
+        LocalDate localDate = LocalDate.now();
+        initHolidayInfo(localDate);
+        initMessage(localDate, message);
+
+        return message.toString();
+    }
+
+    private void sendTurbo(StringBuilder message) throws IOException {
+
+        HashMap<String, String> content = new HashMap<>(2);
+        content.put("title", "摸鱼通知");
+        content.put("desp", message.toString());
+
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        MediaType mediaType = MediaType.parse("text/plain");
+        RequestBody body = RequestBody.create(mediaType, "");
+        Request request = new Request.Builder()
+                .url("https://sctapi.ftqq.com/SCT68441T5mf3LEBVkFUa9jfcLqHPFC5Y.send?title=摸鱼通知&desp=" + message.toString())
+                .method("POST", body)
+                .build();
+        Response response = client.newCall(request).execute();
     }
 
     /**
@@ -90,7 +128,8 @@ public class MessageServiceImpl implements MessageService {
 //        System.out.println(LocalDate.now().with(DayOfWeek.SUNDAY)); // 2021-09-12
 //        System.out.println(LocalDate.now());
 //        System.out.println(Period.between(LocalDate.now(), LocalDate.now().with(DayOfWeek.SUNDAY)).getDays());
-        MessageServiceImpl impl = new MessageServiceImpl();
-        impl.sendMessage();
+//        MessageServiceImpl impl = new MessageServiceImpl();
+//        impl.sendMessage();
+        System.out.println(LocalDate.of(2021, 5, 1).toEpochDay() - LocalDate.of(2021, 10, 10).toEpochDay());
     }
 }
