@@ -11,6 +11,9 @@ public interface MessageService {
 
     void sendMessage();
 
+    /**
+     * 假期信息
+     * @return
+     */
     String getMessage();
-
 }

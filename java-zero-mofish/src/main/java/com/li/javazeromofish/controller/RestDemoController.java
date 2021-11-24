@@ -50,15 +50,15 @@ public class RestDemoController {
     @PostMapping("/wx")
     public String receiveMessage(HttpServletRequest request) {
         Map<String, String> map = XMLUtils.xmlToMap(request);
-        System.out.println(map);
+        logger.info("====================> param is {}", map);
         String toUserName = map.get("ToUserName");
         String fromUserName = map.get("FromUserName");
         map.put("ToUserName", fromUserName);
         map.put("FromUserName", toUserName);
         String message = messageService.getMessage();
-        System.out.println(message);
+        logger.info("====================> message is {}", message);
         map.put("Content", message);
-        System.out.println(map);
+        logger.info("====================> result is {}", map);
         return XMLUtils.xmlFormat(map, true);
     }
 }

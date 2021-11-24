@@ -1,5 +1,4 @@
-package com.li.javazeromofish.kv;
-
+package example;
 public class KeyValueClass {
     String key1;
     String key2;

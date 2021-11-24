@@ -89,6 +89,9 @@ public class MessageServiceImpl implements MessageService {
         Set<LocalDate> localDates = holidayMap.keySet();
         List<LocalDate> dates = localDates.stream().sorted().collect(Collectors.toList());
         for (LocalDate date : dates) {
+            if (date.toEpochDay() - localDate.toEpochDay() <= 0) {
+                continue;
+            }
             message.append(String.format(MESSAGE_1, holidayMap.get(date), date.toEpochDay() - localDate.toEpochDay()));
             message.append("\r\n");
         }
@@ -130,6 +133,6 @@ public class MessageServiceImpl implements MessageService {
 //        System.out.println(Period.between(LocalDate.now(), LocalDate.now().with(DayOfWeek.SUNDAY)).getDays());
 //        MessageServiceImpl impl = new MessageServiceImpl();
 //        impl.sendMessage();
-        System.out.println(LocalDate.of(2021, 5, 1).toEpochDay() - LocalDate.of(2021, 10, 10).toEpochDay());
+//        System.out.println(LocalDate.of(2021, 5, 1).toEpochDay() - LocalDate.of(2021, 10, 10).toEpochDay());
     }
 }
