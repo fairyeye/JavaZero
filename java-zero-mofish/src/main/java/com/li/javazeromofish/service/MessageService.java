@@ -16,4 +16,7 @@ public interface MessageService {
      * @return
      */
     String getMessage();
+
+    String initMessage(String content);
+
 }

@@ -1,10 +1,13 @@
 package com.li.javazeromofish.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.li.javazeromofish.client.HitokotoClient;
 import com.li.javazeromofish.service.MessageService;
 import okhttp3.*;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -22,6 +25,9 @@ import java.util.stream.Collectors;
  */
 @Component
 public class MessageServiceImpl implements MessageService {
+
+    @Autowired
+    private HitokotoClient hitokotoClient;
 
     private static final Logger logger = LoggerFactory.getLogger(MessageServiceImpl.class);
 
@@ -52,6 +58,14 @@ public class MessageServiceImpl implements MessageService {
         initMessage(localDate, message);
 
         return message.toString();
+    }
+
+    @Override
+    public String initMessage(String content) {
+        if (StringUtils.contains(content, "一言")) {
+            return hitokotoClient.getString('i');
+        }
+        return this.getMessage();
     }
 
     private void sendTurbo(StringBuilder message) throws IOException {

@@ -53,9 +53,10 @@ public class RestDemoController {
         logger.info("====================> param is {}", map);
         String toUserName = map.get("ToUserName");
         String fromUserName = map.get("FromUserName");
+        String content = map.get("Content");
         map.put("ToUserName", fromUserName);
         map.put("FromUserName", toUserName);
-        String message = messageService.getMessage();
+        String message = messageService.initMessage(content);
         logger.info("====================> message is {}", message);
         map.put("Content", message);
         logger.info("====================> result is {}", map);
