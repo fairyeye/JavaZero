@@ -78,7 +78,7 @@ public class MessageServiceImpl implements MessageService {
         MediaType mediaType = MediaType.parse("text/plain");
         RequestBody body = RequestBody.create(mediaType, "");
         Request request = new Request.Builder()
-                .url("https://sctapi.ftqq.com/SCT68441T5mf3LEBVkFUa9jfcLqHPFC5Y.send?title=摸鱼通知&desp=" + message.toString())
+                .url("https://sctapi.ftqq.com/SCT68441T5mf3LEBVkFUa9jfcLqHPFC5Y.send?title=通知&desp=" + message.toString())
                 .method("POST", body)
                 .build();
         Response response = client.newCall(request).execute();
