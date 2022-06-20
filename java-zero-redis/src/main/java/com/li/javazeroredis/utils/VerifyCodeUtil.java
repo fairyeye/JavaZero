@@ -2,7 +2,6 @@ package com.li.javazeroredis.utils;
 
 import com.li.javazeroredis.instance.SecureRandomInstance;
 
-import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
 /**
@@ -18,8 +17,9 @@ public class VerifyCodeUtil {
      */
     public static String initVerifyCode() {
 
+        // 字符串 存放验证码
         StringBuffer verifyCode = new StringBuffer();
-
+        // 生成随机数的实例
         SecureRandom secureRandom = SecureRandomInstance.getInstance();
 
         for (int i = 0; i < 6; i++) {
