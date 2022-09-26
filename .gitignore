@@ -1,0 +1,8 @@
+/.idea/
+/.idea/libraries/
+
+# idea ignore
+*.ipr
+*.iml
+*.iws
+*.mvn

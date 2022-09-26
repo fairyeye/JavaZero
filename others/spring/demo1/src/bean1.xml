@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <!--配置 User 对象创建-->
+        <bean id="user" class="com.springdemo.User" scope="prototype">
+                <!-- 通过xml设置特殊符号 -->
+                <property name="name">
+                        <value>
+                                <![CDATA[<<南京>>]]>
+                        </value>
+                </property>
+                <!--构造器注入-->
+                <constructor-arg name="age" value="24"></constructor-arg>
+                <!--注入外部Bean-->
+                <property name="userTwo" ref="userTwo"></property>
+                <!--注入内部Bean-->
+                <property name="userThree">
+                        <bean id="userThree" class="com.springdemo.UserThree">
+                                <property name="tName" value="userThree"></property>
+                        </bean>
+                </property>
+                <!--注入集合属性-->
+                <property name="strs">
+                        <array value-type="java.lang.String" >
+                                <value>wahaha</value>
+                                <value>cola</value>
+                        </array>
+                </property>
+        </bean>
+
+        <!--外部Bean-->
+        <bean id="userTwo" class="com.springdemo.UserTwo">
+                <property name="tName">
+                        <null></null>
+                </property>
+                <property name="tAge" value="25"></property>
+        </bean>
+        <!--定义FactoryBean-->
+        <bean id="factoryBeanDemo" class="com.springdemo.FactoryBeanDemo"></bean>
+</beans>

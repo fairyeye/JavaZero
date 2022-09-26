@@ -1,0 +1,26 @@
+server:
+    port: 10001
+spring:
+    application:
+        name: java-zero-redis
+    redis:
+        # Redis 服务器地址
+        host: 127.0.0.1
+        # Redis 数据库索引 默认 0
+        database: 1
+        # Redis 端口 默认6379
+        port: 6379
+        # Redis 密码 默认为空
+        # password:
+        jedis:
+          pool:
+              # Redis 连接池最大连接数 默认 8 （使用负值表示没有限制）
+              max-active: 8
+              # Redis 连接池最大阻塞时间 默认 -1 （使用负值表示没有限制）
+              max-wait: -1
+              # Redis 最大空闲连接数 默认 8
+              max-idle: 8
+              # Redis 最小空闲连接数 默认 0
+              min-idle: 0
+        # Redis 超时时间
+        timeout: 1000
