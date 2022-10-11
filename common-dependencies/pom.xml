@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.java.zero</groupId>
-    <artifactId>middlewares</artifactId>
+    <artifactId>common-dependencies</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>middlewares</name>
+    <name>common-dependencies</name>
     <packaging>pom</packaging>
-    <description>middlewares</description>
+    <description>common-dependencies</description>
 
     <parent>
         <artifactId>java-zero</artifactId>
@@ -15,12 +15,13 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <modules>
-<!--        <module>java-zero-mofish</module>-->
-<!--        <module>java-zero-eureka</module>-->
-<!--        <module>java-zero-redis</module>-->
-<!--        <module>kafka</module>-->
-        <module>java-zero-mybatis</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.12.graal</version>
+        </dependency>
+    </dependencies>
+
 
 </project>

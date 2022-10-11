@@ -1,0 +1,12 @@
+mybatis:
+    mapper-locations: classpath:mapper/*xml
+    type-aliases-package: com.java.zero.entity
+spring:
+    application:
+        name: java-zero-mybatis
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        name: defaultDataSource
+        password: root
+        url: jdbc:mysql://localhost:3306/middlewares?serverTimezone=UTC
+        username: root
