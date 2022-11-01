@@ -21,6 +21,7 @@
 <!--        <module>java-zero-redis</module>-->
 <!--        <module>kafka</module>-->
         <module>java-zero-mybatis</module>
+        <module>spring-file-storage</module>
     </modules>
 
 </project>
