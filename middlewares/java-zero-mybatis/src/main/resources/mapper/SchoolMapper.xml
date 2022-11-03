@@ -19,9 +19,17 @@
         createTime,
             updateTime
     </sql>
+    <insert id="insertOne">
+        insert into school(name,address,create_time,update_time) values(#{name}, #{address}, #{createTime}, #{updateTime})
+    </insert>
+    <update id="update">
+        update school set name = #{name},address = #{address}, create_time = #{createTime}, update_time = #{updateTime} where id = #{id}
+    </update>
     <select id="query" resultType="com.java.zero.entity.School">
         select
         <include refid="Base_Column_List"/>
-        from school;
+        from school
+        where id = #{param1}
+        <!-- where id = #{param1}等同于 where id = #{id} -->
     </select>
 </mapper>

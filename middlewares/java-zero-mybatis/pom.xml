@@ -7,12 +7,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>java-zero-mybatis</name>
     <description>java-zero-mybatis</description>
-    <parent>
-        <artifactId>common-dependencies</artifactId>
-        <groupId>com.java.zero</groupId>
-        <version>0.0.1-SNAPSHOT</version>
-    </parent>
-
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -31,6 +25,11 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.12.graal</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

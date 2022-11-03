@@ -14,13 +14,20 @@ class JavaZeroMybatisApplicationTests {
 
     @Resource
     private SchoolMapper schoolMapper;
+
     @Test
     void contextLoads() {
 
-        List<School> schools = schoolMapper.query();
+//        List<School> schools = schoolMapper.query(3L);
 
-        System.out.println(JSONObject.toJSONString(schools));
+//        System.out.println(JSONObject.toJSONString(schools));
 
+//        schoolMapper.insertOne(new School("name", "address"));
+
+        School school = new School("name", "address");
+        school.setId(9L);
+
+        schoolMapper.update(school);
     }
 
 }

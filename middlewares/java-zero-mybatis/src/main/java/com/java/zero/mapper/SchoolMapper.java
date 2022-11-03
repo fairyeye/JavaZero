@@ -2,6 +2,7 @@ package com.java.zero.mapper;
 
 import com.java.zero.entity.School;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -14,7 +15,15 @@ import java.util.List;
 @Mapper
 public interface SchoolMapper {
 
-    List<School> query();
+    /**
+     *
+     * @param id
+     * @return
+     */
+    List<School> query(@Param("id") Long id);
 
+    int insertOne(School school);
+
+    int update(School school);
 
 }
