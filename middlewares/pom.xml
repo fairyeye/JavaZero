@@ -22,6 +22,7 @@
 <!--        <module>kafka</module>-->
         <module>java-zero-mybatis</module>
         <module>spring-file-storage</module>
+        <module>poi-excel</module>
     </modules>
 
 </project>
