@@ -18,5 +18,6 @@
 
     <modules>
         <module>simple-spider</module>
+        <module>sign</module>
     </modules>
 </project>
