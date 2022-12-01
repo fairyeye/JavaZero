@@ -1,0 +1,8 @@
+spring:
+    application:
+        name: nacosDemo
+    cloud:
+        nacos:
+            config:
+                server-addr: 42.192.131.71:20000
+                file-extension: yaml

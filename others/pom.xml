@@ -19,5 +19,6 @@
     <modules>
         <module>simple-spider</module>
         <module>sign</module>
+        <module>java-python</module>
     </modules>
 </project>

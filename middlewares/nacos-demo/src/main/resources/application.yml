@@ -1,0 +1,5 @@
+nacos:
+    config:
+        server-addr: 42.192.131.71:20000
+server:
+    port: 9001
