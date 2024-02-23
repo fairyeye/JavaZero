@@ -1,0 +1,14 @@
+debezium:
+    datasource:
+        flushInterval: 10000
+        historyFile: /Users/li/home/debezium/custom-file-db-history.dat
+        hostname: localhost
+        password: 12345678
+        port: 3306
+        serverId: 1
+        serverName: name-1
+        storageFile: /Users/li/home/debezium/offset.dat
+        tableWhitelist: debezium.user
+        user: root
+server:
+    port: 8080

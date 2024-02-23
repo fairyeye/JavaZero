@@ -11,10 +11,12 @@
 
 
     <modules>
+
+        <module>spring-security</module>
 <!--        <module>spring-guides</module>-->
 <!--        <module>middlewares</module>-->
 <!--        <module>others</module>-->
-        <module>design-patterns</module>
+<!--        <module>design-patterns</module>-->
         <module>common-dependencies</module>
     </modules>
 </project>

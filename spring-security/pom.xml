@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.li</groupId>
+    <artifactId>spring-security</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>spring-security</name>
+    <packaging>pom</packaging>
+    <description>spring-security</description>
+
+    <parent>
+        <artifactId>java-zero</artifactId>
+        <groupId>com.java.zero</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modules>
+<!--        <module>11-springsecurity-database-authentication</module>-->
+<!--        <module>springsecurity-13-thymeleaf</module>-->
+        <module>springsecurity-16-jwt</module>
+        <module>spring-security-01</module>
+    </modules>
+
+</project>
